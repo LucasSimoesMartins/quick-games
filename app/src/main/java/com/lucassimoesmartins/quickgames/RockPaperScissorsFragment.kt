@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_rock_paper_scissors.*
 
 class RockPaperScissorsFragment : Fragment(), View.OnClickListener {
 
-    lateinit var frameAnimation : AnimationDrawable
+    lateinit var frameAnimation: AnimationDrawable
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,7 +64,7 @@ class RockPaperScissorsFragment : Fragment(), View.OnClickListener {
 
     private fun setRivalChoiceAnimation() {
         //Set rival choice animation
-        imgRival.setBackgroundResource(R.drawable.anim_random_image)
+        imgRival.setBackgroundResource(R.drawable.anim_random_rock_paper_scissors)
         frameAnimation = imgRival.background as AnimationDrawable
         frameAnimation.start()
     }
@@ -88,7 +88,8 @@ class RockPaperScissorsFragment : Fragment(), View.OnClickListener {
             } else if (
                 playerChoice == R.drawable.rock && rivalChoice == R.drawable.scissors ||
                 playerChoice == R.drawable.paper && rivalChoice == R.drawable.rock ||
-                playerChoice == R.drawable.scissors && rivalChoice == R.drawable.paper) {
+                playerChoice == R.drawable.scissors && rivalChoice == R.drawable.paper
+            ) {
 
                 changeTextResult("You win")
             } else {
@@ -99,7 +100,7 @@ class RockPaperScissorsFragment : Fragment(), View.OnClickListener {
         }.start()
     }
 
-    private fun changeTextResult(result : String){
+    private fun changeTextResult(result: String) {
         activity?.runOnUiThread {
             txtResult.text = result
         }
