@@ -12,11 +12,10 @@
         android:id="@+id/imgRival"
         android:layout_width="135dp"
         android:layout_height="135dp"
-        android:layout_marginTop="24dp"
         android:background="@drawable/blank_option"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtResult"
@@ -35,44 +34,59 @@
         android:id="@+id/imgChosen"
         android:layout_width="135dp"
         android:layout_height="135dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/blank_option"
-        app:layout_constraintBottom_toTopOf="@+id/imgPaper"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgRock"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/rock"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgPaper"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:layout_editor_absoluteX="10dp">
 
-    <ImageView
-        android:id="@+id/imgPaper"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/paper"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgscissors"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgRock" />
+        <ImageView
+            android:id="@+id/imgRock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/rock" />
 
-    <ImageView
-        android:id="@+id/imgscissors"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/scissors"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgPaper" />
+        <ImageView
+            android:id="@+id/imgPaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/paper" />
+
+        <ImageView
+            android:id="@+id/imgscissors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/scissors" />
+
+
+    </LinearLayout>
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
